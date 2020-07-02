@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title TestProject
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .section
+      .container
+        - if current_user
+          .logout
+            = link_to 'Logout', main_app.destroy_user_session_url, class: 'btn btn-md btn-danger text-right', style: 'margin-bottom: 10px'
+        = yield
