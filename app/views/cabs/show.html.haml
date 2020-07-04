@@ -1,7 +1,10 @@
 .card
   .card-header
     %h3.d-inline Cab Detail
-    = link_to 'Back', root_path, class: 'btn btn-outline-dark btn-sm back-btn'
+    .btn-group
+      = link_to 'Back', root_path, class: 'btn btn-outline-dark btn-sm'
+      = link_to 'edit', edit_cab_path(@cab), class: 'btn btn-outline-primary btn-sm'
+      = link_to 'delete', cab_url(@cab), method: :delete, data: { confirm: 'Are you sure' }, class: 'btn btn-outline-danger btn-sm'
   .card-body
     %form
       .form-group.row
