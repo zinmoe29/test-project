@@ -1,11 +1,11 @@
-= simple_form_for(@car, html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |f|
+= simple_form_for(@cab, html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |f|
   .card
-    .card-header= 'New Car'
+    .card-header= 'New Cab'
     .card-body
       = f.input :model, placeholder: 'Model'
       = f.input :plate_number, placeholder: 'Plate no:'
       = f.input :mileage, placeholder: 'Mileage'
       = f.file_field :car_photo, class: 'offset-sm-3', accept: 'image/x-png,image/gif,image/jpeg'
     .card-footer
-      = link_to 'Back', @car || car_url, class: 'btn btn-outline-dark offset-sm-3'
-      = f.submit 'Create', class: 'btn btn-outline-primary'
+      = link_to 'Back', @cab || cab_url, class: 'btn btn-outline-dark offset-sm-3'
+      = f.submit class: 'btn btn-outline-primary'

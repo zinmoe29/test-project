@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 30.times do
-  c = Car.find_or_create_by(
+  c = Cab.find_or_create_by(
     model: Faker::Vehicle.model,
     plate_number: Faker::Vehicle.license_plate,
     mileage: Faker::Vehicle.mileage

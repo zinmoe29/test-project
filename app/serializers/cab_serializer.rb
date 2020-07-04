@@ -1,3 +1,3 @@
-class CarSerializer < ActiveModel::Serializer
+class CabSerializer < ActiveModel::Serializer
   attributes :id, :model,  :plate_number, :mileage
 end

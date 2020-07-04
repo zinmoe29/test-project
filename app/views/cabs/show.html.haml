@@ -1,6 +1,6 @@
 .card
   .card-header
-    %h3.d-inline Car Detail
+    %h3.d-inline Cab Detail
     = link_to 'Back', root_path, class: 'btn btn-outline-dark btn-sm back-btn'
   .card-body
     %form
@@ -11,16 +11,16 @@
       .form-group.row
         %label.col-sm-2.col-form-label Model
         .col-sm-10
-          %p.form-control-plaintext= @car.model
+          %p.form-control-plaintext= @cab.model
       .form-group.row
         %label.col-sm-2.col-form-label Plate No:
         .col-sm-10
-          %p.form-control-plaintext= @car.plate_number
+          %p.form-control-plaintext= @cab.plate_number
       .form-group.row
         %label.col-sm-2.col-form-label Mileage
         .col-sm-10
-          %p.form-control-plaintext= @car.mileage
+          %p.form-control-plaintext= @cab.mileage
       .form-group.row
         %label.col-sm-2.col-form-label Photo
         .col-sm-10
-          = image_tag(@car.car_photo.url) if @car.car_photo.exists?
+          = image_tag(@cab.car_photo.url) if @cab.car_photo.exists?

@@ -1,0 +1,33 @@
+%h3.d-inline Cabs
+= link_to 'New', new_cab_url, class: 'btn btn-outline-info btn-sm new-btn'
+= link_to 'Export as Excel', download_cabs_url, 'data-turbolinks': false , class: 'btn btn-outline-success btn-sm new-btn'
+
+.row
+  .col-sm-12
+    %table.table.table-striped
+      %thead
+        %tr.text-right
+          %th #
+          %th Model
+          %th Plate Number
+          %th Mileage
+          %th Actions
+      %tbody
+        - @cabs.each_with_index do |cab, index|
+          %tr.text-right
+            %td
+              = @cabs.offset + index + 1
+            %td
+              = cab.model
+            %td
+              = cab.plate_number
+            %td
+              = cab.mileage
+            %td
+              = link_to 'view', cab, class: 'btn btn-outline-secondary  btn-sm'
+              = link_to 'edit', edit_cab_path(cab), class: 'btn btn-outline-primary btn-sm'
+              = link_to 'delete', cab_url(cab), method: :delete, data: { confirm: 'Are you sure' }, class: 'btn btn-outline-danger btn-sm'
+
+
+.digg_pagination
+  = will_paginate @cabs, contaier: false
